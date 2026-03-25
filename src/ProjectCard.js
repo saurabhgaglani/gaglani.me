@@ -31,6 +31,7 @@ export default function ProjectCard({ name, description, tech, githubUrl, videoU
       {videoUrl && (
         videoUrl.includes('youtu') ? (
           <iframe
+            title={`${name} demo video`}
             className="w-full rounded mb-3 aspect-video"
             src={`https://www.youtube.com/embed/${new URL(videoUrl.replace('youtu.be/', 'youtube.com/watch?v=')).searchParams.get('v') || videoUrl.split('youtu.be/')[1]?.split('?')[0]}`}
             allow="autoplay; encrypted-media"
